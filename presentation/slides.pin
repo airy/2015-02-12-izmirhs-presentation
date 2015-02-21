@@ -1,0 +1,413 @@
+#!/usr/bin/env pinpoint
+[red]
+[text-color=white]
+[shading-opacity=0.0]
+[font=Sans 50px]
+[fill]
+[left]
+[transition=fade]
+
+-[center][font=Sans 200px]
+sen hiç nesne gördün mü?
+
+-[akkudu.jpg]
+
+-[akkudu.jpg][bottom][font=Sans 200px]
+Andaç Karay Kudu
+&#8291;
+
+-[akkudu.jpg][bottom][font=Sans 200px]
+Andaç Karay Kudu
+– Yazılım Ustası
+
+
+-[akkudu.jpg][bottom][font=Sans 200px]
+
+www: akkudu.com
+twitter: @akkuducom
+email: hey@akkudu.com
+
+-[akkudu.jpg][bottom][font=Sans 200px]
+
+Sorularınızı @akkuducom'a tweetlerseniz
+size daha sonra cevap yazabilirim.
+(şu an meşgulüm)
+
+-[center][font=Sans 200px]
+sen hiç nesne gördün mü?
+
+-[center][font=Sans 200px]
+ruby ile
+nesne tabanlı programlama
+
+-[f1.jpg][fill]
+
+-[fantasy.jpg][fill]
+
+-[ledger.jpg][fill]
+
+-[center][font=Sans 200px]
+somut ve soyut kavramların
+bilgisayar ortamında modellenmesi
+temeline dayalı bir disiplindir
+
+-[center][font=Sans 200px]
+
+ruby?
+
+-[transition=page-curl-both][yukihiro_matsumoto.jpg][bottom][fit][font=Sans 200px]
+
+“Ruby is designed to make programmers happy.”
+– Yukihiro “Matz” Matsumoto
+
+-[center][font=Sans 200px]
+100% nesne tabanlıdır
+
+-[center][font=Sans 200px]
+nesne nedir?
+yenir mi?
+
+-[caveman.jpg][fill]
+
+-[font=Sans 200px]
+nesne, bir değer barındıran
+ve bir tanımlayıcı ile ulaşılan
+hafıza bölgesidir.
+
+-[transition=text-slide-up]
+1
+=> 1
+
+"Ruby"
+=> "Ruby"
+
+[1, 2, 3]
+=> [1, 2, 3]
+
+-[transition=text-slide-up]
+
+one = 1
+=> 1
+
+one
+=> 1
+
+ruby = "Ruby"
+=> "Ruby"
+
+ruby
+=> "Ruby"
+
+-[transition=text-slide-up]
+
+def foo
+  # ...
+end
+=> :foo
+
+-[center][font=Sans 200px]
+
+bu nesneler ile ne yapabiliriz?
+
+-[center][font=Sans 200px]
+
+Onlarla konuşabiliriz
+
+-[transition=text-slide-up]
+
+'ruby'.send :upcase
+=> "RUBY"
+
+2.send :*, 2
+=> 4
+
+[1, 2, 3].send :nil?
+=> false
+
+-[transition=text-slide-up]
+
+'ruby'.upcase
+=> "RUBY"
+
+2.*, 2
+=> 4
+
+[1, 2, 3].nil?
+=> false
+
+-[transition=text-slide-up]
+
+matz = "Matz"
+
+matz.greet
+=> NoMethodError: undefined method `greet' for "Matz":String
+
+-[transition=text-slide-up]
+
+matz = "Matz"
+
+def matz.greet
+  puts "Hello, i am #{self}"
+end
+
+matz.greet
+=> "Hello, i am Matz"
+
+-[transition=fade][center][font=Sans 200px]
+
+nesne, bilgiyi ve işlemi
+bir arada bulunduran yapıdır.
+
+-[transition=fade][center][font=Sans 200px]
+
+nesne = bilgi + işlem
+
+-[think_elegant.jpg]
+
+-[transition=fade][center][font=Sans 200px]
+
+nesne = özellik + davranış
+
+-[transition=fade][center][font=Sans 200px][green]
+
+İki gönüllüye
+ihtiyacım var!
+
+-[center][font=Sans 200px]
+sınıf / class
+
+-[center][font=Sans 200px]
+sınıf nedir?
+geçilir mi?
+
+-[center][font=Sans 200px]
+nesnelerin
+ortak özellik ve davranışlarını
+gruplandırdığımız
+nesne şablonlarıdır.
+
+-[transition=text-slide-up]
+class Person
+  attr_accessor :name
+
+  def greet
+    puts "Hello, i am #{name}"
+  end
+end
+
+-[transition=text-slide-up]
+matz = Person.new
+person.name = "Matz"
+matz.greet
+
+=> "hello, i am Matz"
+
+-[transition=text-slide-up]
+class Person
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+-[transition=text-slide-up]
+matz = Person.new("Matz")
+matz.greet
+
+=> "hello, i am Matz"
+
+-[transition=text-slide-up]
+class FictionalPerson < Person
+end
+
+neo = FictionalPerson.new("Neo")
+neo.greet
+
+=> "hello, i am Neo"
+
+-[transition=text-slide-up]
+class Bird
+  attr_accessor :name, :sound
+
+  def initialize(name, sound)
+    @name, @sound = name, sound
+  end
+
+  def sing
+    puts "#{@sound * 3}"
+  end
+end
+
+-[tweety1.gif][fit][top-left]
+canary = Bird.new('Tweety', '♫')
+canary.sing
+=> "♫♫♫"
+
+-[penguins.png][bottom-left]
+penguin = Bird.new("Kowalski", WTF?!?
+
+-[transition=text-slide-up]
+class Bird
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+-[transition=text-slide-up]
+class SingingBird < Bird
+  attr_accessor :sound
+
+  def initialize(name, sound)
+    super name
+    @sound = sound
+  end
+
+  def sing
+    puts "#{sound * 3}"
+  end
+end
+
+-[transition=text-slide-up]
+
+Bird
+
+-[transition=text-slide-up]
+
+Bird
+
+SingingBird < Bird
+
+-[transition=text-slide-up]
+
+Bird
+
+SingingBird
+
+SingingAndFlyingBird
+
+-[transition=text-slide-up]
+
+Bird
+
+SingingBird
+
+SingingAndFlyingBird
+
+NonSingingButFlyingBird
+
+-[transition=text-slide-up]
+
+Bird
+
+SingingBird
+
+SingingAndFlyingBird
+
+NonSingingButFlyingBird
+
+SingingButNonFlyingBird
+
+-[transition=text-slide-up]
+
+Bird
+
+SingingBird
+
+SingingAndFlyingBird
+
+NonSingingButFlyingBird
+
+SingingButNonFlyingBird
+
+NonSingingAndNonFlyingBird
+
+...
+
+-[center][font=Sans 200px][modular.jpg][text-color=black]
+Modül / Module
+
+-[transition=text-slide-up]
+module Flier
+  def fly
+    puts "#{name} is flying!"
+  end
+end
+
+-[transition=text-slide-up]
+
+class Canary < Bird
+  include Flier
+end
+
+tweety = Canary.new("Tweety")
+tweety.fly
+=> "Tweety is flying!"
+
+-[transition=text-slide-up]
+jonathan = Bird.new('Livingstone')
+
+jonathan.extend Flier
+
+jonathan.fly
+=> "Livingstone is flying!"
+
+-[transition=text-slide-up]
+module Bird
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+
+-[transition=text-slide-up]
+
+class Canary
+  include Bird
+  include Flier
+end
+
+-[transition=text-slide-up]
+tweety = Canary.new("Tweety")
+tweety.fly
+
+=> Tweety is flying!
+
+-[transition=text-slide-up]
+module Swimmer
+  def swim
+    puts "#{name} is swimming!"
+  end
+end
+
+-[transition=text-slide-up]
+class Penguin
+  include Bird
+  include Swimmer
+end
+
+-[transition=text-slide-up]
+kowalski = Penguin.new("Kowalski")
+kowalski.swimming
+
+=> Kowalski is swimming!
+
+-[center][font=Sans 200px]
+Sorularınız?
+
+-[center][font=Sans 200px]
+
+Teşekkürler ...
+
+-[akkudu.jpg][fill][bottom][transition=fade][text-align=center][font=Sans 200px]
+
+Andaç Karay Kudu
+
+
+www: akkudu.com
+twitter: @akkuducom
+email: hey@akkudu.com
